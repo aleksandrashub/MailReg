@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Assets\mail.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AvaloniaResource Include="Assets\mail.jpg" />
+    <None Remove="Assets\rus" />
+    <AvaloniaResource Include="Assets\rus" />
+    <None Remove="Assets\flag_danija_enl.jpg" />
+    <AvaloniaResource Include="Assets\dania" />
+    <None Remove="Assets\flag_belarusi.png" />
+    <AvaloniaResource Include="Assets\flag_belarusi.png" />
+    <None Remove="Assets\Abkhazia.png" />
+    <AvaloniaResource Include="Assets\Abkhazia.png" />
+    <None Remove="Assets\Austria.png" />
+    <AvaloniaResource Include="Assets\Austria.png" />
+    <None Remove="Assets\italy.png" />
+    <AvaloniaResource Include="Assets\italy.png" />
+    <None Remove="Assets\rumynia.png" />
+    <AvaloniaResource Include="Assets\rumynia.png" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="11.0.0-preview7" />
+    <PackageReference Include="Avalonia.Desktop" Version="11.0.0-preview7" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.0.0-preview7" />
+    <PackageReference Include="Avalonia.Fonts.Inter" Version="11.0.0-preview7" />
+    <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
+    <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.0.0-preview7" />
+  </ItemGroup>
+</Project>
